@@ -1,0 +1,212 @@
+/* 2 punktas – šriftai ir antraštės */
+
+/* Visas puslapis – šriftas ir tema */
+body {
+    background-color: #0f172a;  /* tamsus fonas */
+    color: #e5e7eb;             /* šviesus tekstas */
+    font-family: "Mulish", "Roboto", sans-serif;
+  }
+  
+  /* Antraštės – VISI lygiai */
+  h1 {
+    font-size: 3rem;
+    color: #0d6efd;
+    letter-spacing: 2px;
+    font-weight: 800;
+  }
+  
+  h2 {
+    font-size: 2.4rem;
+    color: #198754;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+    color: #e5e7eb;
+    font-weight: 700;
+  }
+  
+  h4 {
+    font-size: 1.4rem;
+    color: #cbd5f5;
+    font-weight: 600;
+  }
+  
+  h5 {
+    font-size: 1.1rem;
+    color: #e5e7eb;
+    font-weight: 500;
+  }
+  
+  h6 {
+    font-size: 0.95rem;
+    color: #e5e7eb;
+  }
+  
+  /* Pastraipos */
+  p {
+    line-height: 1.8;
+    font-size: 16px;
+  }
+  
+  
+  /* 3 punktas – mygtukai ir nuorodos */
+  
+  /* Visų mygtukų ir .btn klasės stilius */
+  .btn,
+  button {
+    border-radius: 12px !important;
+    padding: 10px 22px;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s;
+  }
+  
+  /* Užvedus pelę */
+  .btn:hover,
+  button:hover {
+    background-color: #198754 !important; /* žalia */
+    color: #ffffff !important;
+    transform: translateY(-2px);
+  }
+  
+  /* Paspaudus (active) */
+  .btn:active,
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Nuorodos */
+  a {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  /* Nuorodos užvedus */
+  a:hover {
+    color: #facc15;
+    text-decoration: underline;
+  }
+  
+  
+  /* 4 punktas – tarpai ir sekcijų blokai */
+  
+  /* Vienodi tarpai sekcijoms */
+  #about,
+  #resume,
+  #portfolio,
+  #services {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  
+  /* Sekcijų blokai – tamsios kortelės */
+  #about.section,
+  #resume.section,
+  #portfolio.section,
+  #services.section {
+    background-color: #1e293b; /* tamsi kortelė */
+    color: #e5e7eb;            /* šviesus tekstas */
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    margin: 40px 20px;
+    padding: 40px 30px;
+  }
+  
+  
+  /* 5 punktas – 1 komponentas: NAVIGACIJOS JUOSTA */
+  
+  #header {
+    background: linear-gradient(90deg, #0d6efd, #198754); /* mėlyna-žalia */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  #navmenu ul li a {
+    color: white !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  #navmenu ul li a:hover {
+    color: #ffc107 !important; /* geltona */
+  }
+  
+  
+  /* 5 punktas – 2 komponentas: SCROLL TO TOP MYGTUKAS */
+  
+  #scroll-top {
+    background-color: #dc3545 !important; /* raudonas */
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  }
+  
+  #scroll-top:hover {
+    background-color: #0d6efd !important; /* mėlynas */
+  }
+  
+  
+  /* 7 (papildoma 1 dalis) – sąrašai */
+  
+  ul.custom-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  ul.custom-list li::before {
+    content: "✔ ";
+    color: #22c55e;
+    font-weight: bold;
+  }
+  
+  ol.custom-counter {
+    counter-reset: item;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  ol.custom-counter li {
+    counter-increment: item;
+  }
+  
+  ol.custom-counter li::before {
+    content: counter(item) ". ";
+    color: #f97316;
+    font-weight: bold;
+  }
+  
+  
+  /* 8 (papildoma 2 dalis) – lentelė */
+  
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  .custom-table th {
+    background-color: #0d6efd;
+    color: white;
+    padding: 12px;
+  }
+  
+  .custom-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #334155;
+  }
+  
+  /* Zebra stilius */
+  .custom-table tr:nth-child(even) {
+    background-color: #1e293b;
+  }
+  
+  /* Eilutės hover efektas */
+  .custom-table tr:hover {
+    background-color: #334155;
+  }
+  
+  
