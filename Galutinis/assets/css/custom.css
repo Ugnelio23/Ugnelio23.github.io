@@ -1,0 +1,494 @@
+/* ========================= */
+/* 1 PUNKTAS – CSS ANIMACIJOS */
+/* ========================= */
+
+/* 1 animacija – fade in iš apačios */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animacija taikoma TIK antraštėms (saugu, niekas nedingsta) */
+#about h2,
+#resume h2,
+#portfolio h2,
+#services h2 {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* 2 animacija – social ikonų plaukiojimas */
+@keyframes floatIcon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.social-links a {
+  display: inline-block;
+  animation: floatIcon 2s ease-in-out infinite;
+}
+/* ========================= */
+/* 2 PUNKTAS – PAGE PRELOADER */
+/* ========================= */
+
+/* Pilnas ekranas su fonu */
+#preloader {
+  position: fixed;
+  inset: 0; /* top: 0; right: 0; bottom: 0; left: 0; */
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  /* Po 2 sekundžių dingsta */
+  animation: preloaderHide 0.6s ease-out 2s forwards;
+}
+
+/* Sukantis „burbulas“ preloaderio viduje (pseudo-elementas) */
+#preloader::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 6px solid #1e293b;
+  border-top-color: #38bdf8;
+  border-right-color: #38bdf8;
+  animation: preloaderSpin 1s linear infinite;
+}
+
+/* Sukimosi animacija */
+@keyframes preloaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Išnykimo animacija (fading out) */
+@keyframes preloaderHide {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+/* ========================= */
+/* 2 PUNKTAS – ŠRIFTAI IR SPALVOS */
+/* ========================= */
+
+body {
+  background-color: #0f172a;
+  color: #e5e7eb;
+  font-family: "Mulish", "Roboto", sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #0d6efd;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 2.4rem;
+  color: #198754;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: #e5e7eb;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.4rem;
+  color: #cbd5f5;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.1rem;
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+
+/* ========================= */
+/* 3 PUNKTAS – MYGTUKAI IR NUORODOS */
+/* ========================= */
+
+.btn,
+button {
+  border-radius: 12px !important;
+  padding: 10px 22px;
+  font-weight: 600;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn:hover,
+button:hover {
+  background-color: #198754 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.btn:active,
+button:active {
+  transform: scale(0.95);
+}
+
+a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #facc15;
+  text-decoration: underline;
+}
+
+
+/* ========================= */
+/* 4 PUNKTAS – TARPAI IR SEKCIJOS */
+/* ========================= */
+
+#about,
+#resume,
+#portfolio,
+#services {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+/* ========================= */
+/* PAPILDOMA – ANIMUOTAS GRADIENTAS SERVICES */
+/* ========================= */
+
+#services {
+  background: linear-gradient(270deg, #0ea5e9, #6366f1, #22c55e, #f59e0b);
+  background-size: 600% 600%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#about.section,
+#resume.section,
+#portfolio.section,
+#services.section {
+  background-color: #1e293b;
+  color: #e5e7eb;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  margin: 40px 20px;
+  padding: 40px 30px;
+}
+/* ========================= */
+/* PAPILDOMA – CSS FIGŪROS ABOUT */
+/* ========================= */
+
+#about {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Apskritimas */
+#about::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(56, 189, 248, 0.3);
+  border-radius: 50%;
+  top: 40px;
+  left: 30px;
+  animation: floatShape 8s ease-in-out infinite;
+}
+
+/* Kvadratas */
+#about::after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: rgba(34, 197, 94, 0.3);
+  bottom: 40px;
+  right: 30px;
+  animation: rotateShape 10s linear infinite;
+}
+
+/* Judėjimas aukštyn–žemyn */
+@keyframes floatShape {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+
+/* Sukimasis */
+@keyframes rotateShape {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+/* ========================= */
+/* 5 PUNKTAS – NAVIGACIJA */
+/* ========================= */
+
+#header {
+  background: linear-gradient(90deg, #0d6efd, #198754);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+#navmenu ul li a {
+  color: white !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+#navmenu ul li a:hover {
+  color: #ffc107 !important;
+}
+
+
+/* ========================= */
+/* 6 PUNKTAS – SCROLL TO TOP */
+/* ========================= */
+
+#scroll-top {
+  background-color: #dc3545 !important;
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+#scroll-top:hover {
+  background-color: #0d6efd !important;
+}
+
+
+/* ========================= */
+/* PAPILDOMA – SĄRAŠAI */
+/* ========================= */
+
+ul.custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.custom-list li::before {
+  content: "✔ ";
+  color: #22c55e;
+  font-weight: bold;
+}
+
+ol.custom-counter {
+  counter-reset: item;
+  list-style: none;
+  padding-left: 0;
+}
+
+ol.custom-counter li {
+  counter-increment: item;
+}
+
+ol.custom-counter li::before {
+  content: counter(item) ". ";
+  color: #f97316;
+  font-weight: bold;
+}
+
+
+/* ========================= */
+/* PAPILDOMA – LENTELĖ */
+/* ========================= */
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.custom-table th {
+  background-color: #0d6efd;
+  color: white;
+  padding: 12px;
+}
+
+.custom-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #334155;
+}
+
+.custom-table tr:nth-child(even) {
+  background-color: #1e293b;
+}
+
+.custom-table tr:hover {
+  background-color: #334155;
+}
+/* ========================= */
+/* 4 PUNKTAS – KONTRASTAS IR TARPAI */
+/* ========================= */
+
+/* Sekcijų fonai ir tekstas – geras kontrastas */
+.section,
+.hero.section,
+.section.dark-background {
+  color: #e5e7eb;
+}
+
+/* Sekcijų antraštės ir subtitle’ai – aiškiai matomi */
+.section-title {
+  color: #e5e7eb;
+  text-align: center;
+}
+
+.section-title .subtitle,
+.section-title span.subtitle {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  color: #38bdf8; /* ryškiai kontrastuoja su tamsiu fonu */
+}
+
+/* Pagrindinis tekstas – patogus skaitymui */
+.section p,
+.main p {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* Vienodi vertikalūs tarpai tarp sekcijų */
+.main .section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+/* ========================= */
+/* LD12 – ŽAIDIMO SEKCIJA */
+/* ========================= */
+
+#game.section {
+  background-color: #020617;
+}
+
+.game-controls {
+  background-color: #0f172a;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.game-controls h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.game-stats p {
+  margin-bottom: 6px;
+}
+
+.game-message {
+  min-height: 24px;
+  font-weight: 600;
+  color: #22c55e;
+}
+
+/* Lenta – grid iš JavaScript nustatomų stulpelių */
+.game-board {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Kortelė */
+.game-card {
+  background-color: #1e293b;
+  border-radius: 12px;
+  width: 80px;
+  height: 100px;
+  cursor: pointer;
+  perspective: 800px;
+}
+
+.game-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.game-card.flipped .game-card-inner {
+  transform: rotateY(180deg);
+}
+
+.game-card-front,
+.game-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* Neatversta pusė */
+.game-card-front {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+/* Atversta pusė su simboliu */
+.game-card-back {
+  background-color: #020617;
+  transform: rotateY(180deg);
+}
+
+/* Sutapusios poros */
+.game-card.matched {
+  cursor: default;
+  box-shadow: 0 0 0 2px #22c55e;
+  opacity: 0.9;
+}
+
+/* ========================= */
+/* 3 PUNKTAS – PREFERS REDUCED MOTION */
+/* ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
